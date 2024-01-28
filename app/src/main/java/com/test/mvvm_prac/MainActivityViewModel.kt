@@ -32,28 +32,28 @@ class MainActivityViewModel : ViewModel() {
         val retrofit = Retrofit.Builder().baseUrl(url)
             .addConverterFactory(GsonConverterFactory.create()).build();
 
-        val apiService = retrofit.create(ApiService::class.java)
+        val apiService = retrofit.create(RetrofitService::class.java)
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 // API 호출
-                val postId = 1
-                val response: Response<Post> = apiService.getPost(postId) //1을 넣고 api 호출한것
+                val postId = "ko"
+                val response: Response<List<dataItem>> = apiService.getAddressData() //1을 넣고 api 호출한것
 
                 // UI 업데이트는 Main 스레드에서 수행
                 withContext(Dispatchers.Main) {
-                    if (response.isSuccessful) {
-                        val post: Post? = response.body()
+                    if (response.isSuccessful) { //응답 성공시
+                        val post: List<dataItem>? = response.body()
                         if (post != null) {
                             // API 호출이 성공하고, 응답 데이터를 post 변수에 얻어옴
                             // post 변수를 이용하여 필요한 처리 수행
 
-                            Log.d("post", post.toString())
-                            Log.d("post2",response.toString())
+//                            Log.d("post", post.title.toString())
+                            Log.d("post2",response.code().toString())
 
-                            //여기서 model 의 success 함수를 표현할 수 있을듯.
 
-                            _link.value = Model(post.toString()).link()
+
+                            _link.value = Model(post[1].toString()).link()
                         }
                     } else {
                         // API 호출이 실패한 경우

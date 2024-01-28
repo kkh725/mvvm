@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setupObserver()
 
         binding.button.setOnClickListener{
-            viewModel.getapirecall("https://jsonplaceholder.typicode.com/")
+            viewModel.getapirecall("https://api.manana.kr")
         }
 
 
