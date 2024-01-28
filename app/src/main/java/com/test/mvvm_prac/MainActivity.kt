@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
 
         binding.myViewModel = viewModel
-        //view 모델에서는 vm 의 api recall 값을 받아오고 observe 를 활용해서 바뀔때마다 xml 에서도 실행되게끔 구현
-        //정말 잘 모르겠다 다시 해결해보기
 
         setupObserver()
 
