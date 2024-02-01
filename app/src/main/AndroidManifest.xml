@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,15 +17,38 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.test.mvvm_prac.result"
-            android:exported="true" />
+            android:name=".AuthCodeHandlerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GlobalApplication"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".result"
+            android:exported="true" />
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <!--초기화할때는 그냥 api key 그대로 숫자만 가져다 쓰고 menifest에 등록할때는 kakao 붙여쓴다.-->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakaoaf9db06cea754b2ae3978c3f40a2f69f" />
             </intent-filter>
         </activity>
     </application>

@@ -52,12 +52,14 @@ dependencies {
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
+    implementation ("com.kakao.sdk:v2-user:2.11.0" )// 카카오 로그인
+
     //레트로핏 추가
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.google.code.gson:gson:2.10")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Gson 컨버터 추가
 
-    implementation ("com.google.code.gson:gson:2.8.5")
+    implementation ("com.google.code.gson:gson:2.10")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
