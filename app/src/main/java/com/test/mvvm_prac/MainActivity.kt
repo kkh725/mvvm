@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setupObserver()
 
         binding.button.setOnClickListener{
-            viewModel.getapirecall("https://api.manana.kr")
+            viewModel.getapirecall("http://192.168.35.29:8080/", binding.etId.text.toString(),binding.etPw.text.toString())
         }
 
 
