@@ -22,11 +22,13 @@ class result : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_result)
          //네이버 로그아웃과, 연동해제는 따로 만들어서 사용할것.
 
+        //들어오는게 네이버로 로그인할시
         when (intent.getStringExtra("success")){
             "naver" -> {
                 binding.tvNaver.visibility = View.VISIBLE
                 binding.button2.setOnClickListener {startNaverDeleteToken()}
             } ;
+            //카카오로 로그인 할 시
             "kakao" -> {
                 binding.tvKakao.visibility = View.VISIBLE
                 binding.button2.setOnClickListener {startKakaoDeleteToken()}
