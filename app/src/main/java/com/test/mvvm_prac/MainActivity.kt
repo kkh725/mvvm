@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         KakaoSdk.init(this, getString(R.string.kakao_app_key))
         // KaKao SDK  초기화
 
+        //카카오톡으로 로그인실패 후 카카오계정으로 로그인할 시
         val callback: (OAuthToken?, Throwable?) -> Unit = { token, error ->
             if (error != null) {
                 when {
@@ -94,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, result::class.java)
                 intent.putExtra("success","kakao")
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                Log.d("kakao token.accessToken",token.accessToken)
             }
         }
 
@@ -122,6 +124,7 @@ class MainActivity : AppCompatActivity() {
                 else if (tokenInfo != null) {
                     Toast.makeText(this, "토큰 정보 보기 성공", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, result::class.java)
+                    Log.d("token333",tokenInfo.toString())
                     intent.putExtra("success", "kakao")
                     startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 }

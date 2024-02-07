@@ -2,7 +2,7 @@
     <string name="app_name">mvvm_prac</string>
     <string name="social_login_info_naver_client_id">XYASPeaDWpI1SbKen9xH</string>
     <string name="social_login_info_naver_client_secret">7qdUib4giA</string>
-    <string name="social_login_info_naver_client_name">네이버아이디 로그인</string>
+    <string name="social_login_info_naver_client_name">ToDoList</string>
     <string name="kakao_app_key">af9db06cea754b2ae3978c3f40a2f69f</string>
     <string name="kakao_app_key_withkakao">kakaoaf9db06cea754b2ae3978c3f40a2f69f</string>
 
