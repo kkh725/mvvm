@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
         val keyHash = Utility.getKeyHash(this)
         Log.d("Hash", keyHash)
         setContentView(R.layout.activity_main)
@@ -139,8 +141,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-        setupObserver()
+//
+//        setupObserver()
 
         binding.button.setOnClickListener {
             viewModel.getapirecall(
@@ -153,11 +155,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setupObserver() {
-        viewModel.link.observe(this) { // apirecall 변수에 옵저버를 달아두어 변화가 생길때마다 람다식 안의 표현을 수행한다.
-            binding.tv1.text = it // 여기서 It 은 live data 즉 apirecall값의 변경된 값을 의미한다.
-        }
-    }
+//    private fun setupObserver() {
+//        viewModel.link.observe(this) { // apirecall 변수에 옵저버를 달아두어 변화가 생길때마다 람다식 안의 표현을 수행한다.
+//            binding.tv1.text = it // 여기서 It 은 live data 즉 apirecall값의 변경된 값을 의미한다.
+//        }
+//    }
 
     /**
      * Naver
